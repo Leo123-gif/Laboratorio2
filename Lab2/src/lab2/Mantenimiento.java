@@ -300,9 +300,10 @@ private void cargarLista() {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-       Login g = new Login();
-g.setVisible(true);
-dispose();
+ 
+        
+        
+         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
