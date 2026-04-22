@@ -7,7 +7,7 @@ package lab2;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import static lab2.Login.listaUsuarios;
+import static lab2.Login1.listaUsuarios;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -23,7 +23,7 @@ public class Reinicio extends javax.swing.JFrame {
     public Reinicio(ArrayList<Usuarios> lista) {
         initComponents();
         this.listaRecibida = lista; 
-this.setLocationRelativeTo(null);// Guardamos la lista del Login
+this.setLocationRelativeTo(null);// Guardamos la lista del Login1
     }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Reinicio.class.getName());
@@ -170,7 +170,7 @@ this.setLocationRelativeTo(null);// Guardamos la lista del Login
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-          Login l2 = new Login();
+          Login1 l2 = new Login1();
         l2.setVisible(true);
         this.dispose();
         
