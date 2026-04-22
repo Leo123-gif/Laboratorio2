@@ -212,7 +212,7 @@ this.addComponentListener(new java.awt.event.ComponentAdapter() {
     }//GEN-LAST:event_btnMantenimiento2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-      Login g = new Login();
+      Login1 g = new Login1();
 g.setVisible(true);
 dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -230,7 +230,7 @@ dispose();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
    
-        Login l2 = new Login();
+        Login1 l2 = new Login1();
         l2.setVisible(true);
     }                                        
     
