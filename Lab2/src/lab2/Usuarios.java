@@ -9,11 +9,11 @@ package lab2;
  * @author Josue
  */
 public class Usuarios {
-    String usuario;
-    String contraseña;
-    String rol;
-    String estado;
-
+    public String usuario;
+    public String contraseña;
+    public String rol;
+    public String estado;
+    
     public Usuarios(String usuario, String contraseña, String rol, String estado) {
         this.usuario = usuario;
         this.contraseña = contraseña;
