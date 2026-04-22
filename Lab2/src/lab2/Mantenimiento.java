@@ -365,7 +365,7 @@ int index = jListUsuarios.getSelectedIndex();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-  Login l2 = new Login();
+  Login1 l2 = new Login1();
         l2.setVisible(true);
         this.dispose();
                 // TODO add your handling code here:
