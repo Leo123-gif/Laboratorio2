@@ -4,11 +4,39 @@
  */
 package lab2;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author umg
  */
 public class gestion extends javax.swing.JFrame {
+  ArrayList<Usuarios> listaUsuarios;
+ 
+     public void componentMoved(java.awt.event.ComponentEvent evt) {
+        setLocationRelativeTo(null);
+       
+    }
+   
+    public gestion(String tipoUsuario, ArrayList<Usuarios> listaUsuarios) {
+    initComponents();
+            this.setResizable(false);
+          this.setLocationRelativeTo(null);
+          
+this.addComponentListener(new java.awt.event.ComponentAdapter() {
+        @Override
+        public void componentMoved(java.awt.event.ComponentEvent evt) {
+            // Cada vez que detecta un intento de moverlo, lo regresa al centro
+            setLocationRelativeTo(null);
+        }
+    });
+        
+
+    if ("TRABAJADOR".equals(tipoUsuario)) {
+        btnMantenimiento2.setEnabled(false);
+    }
+}
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(gestion.class.getName());
 
@@ -17,7 +45,13 @@ public class gestion extends javax.swing.JFrame {
      */
     public gestion() {
         initComponents();
+        listaUsuarios = new ArrayList<>();
+        
     }
+    public void bloquearMantenimiento() {
+    btnMantenimiento2.setEnabled(false);
+   
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,98 +63,183 @@ public class gestion extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnMantenimiento = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel3 = new javax.swing.JLabel();
+        btnMantenimiento1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        btnMantenimiento2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         jLabel1.setText("Mantenimiento de Usuarios");
 
-        jButton1.setText("INGRESAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        btnMantenimiento.setText("INGRESAR");
 
         jLabel2.setText("REINICIO DE CONTRASEÑA");
 
         jButton2.setText("REGRESAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+
+        jButton3.setText("REINICIAR");
+
+        jLabel3.setText("Mantenimiento de Usuarios");
+
+        btnMantenimiento1.setText("INGRESAR");
+
+        jLabel4.setText("REINICIO DE CONTRASEÑA");
+
+        jButton4.setText("REGRESAR");
+
+        jButton5.setText("REINICIAR");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 204));
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
+        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel5.setText(" USER MAINTENANCE");
+
+        btnMantenimiento2.setBackground(new java.awt.Color(255, 255, 153));
+        btnMantenimiento2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnMantenimiento2.setText(" GET INTO");
+        btnMantenimiento2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnMantenimiento2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("REINICIAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jLabel6.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel6.setText("PASSWORD RESET");
+
+        jButton6.setBackground(new java.awt.Color(255, 51, 51));
+        jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButton6.setText(" GO BACK");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton6ActionPerformed(evt);
             }
         });
+
+        jButton7.setBackground(new java.awt.Color(255, 255, 153));
+        jButton7.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButton7.setText(" REBOOT");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 88, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnMantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton7)
+                        .addGap(159, 159, 159))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(81, 81, 81))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(104, 104, 104))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(btnMantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6)
+                .addGap(12, 12, 12))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2)))
-                .addContainerGap(133, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(148, 148, 148)
-                    .addComponent(jButton3)
-                    .addContainerGap(162, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(147, Short.MAX_VALUE)
-                    .addComponent(jButton3)
-                    .addGap(130, 130, 130)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnMantenimiento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimiento2ActionPerformed
+    if (this.listaUsuarios == null) {
+        this.listaUsuarios = new ArrayList<>();
+    }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    // Ahora abrimos el formulario de Mantenimiento pasando la lista (aunque esté vacía)
+    Mantenimiento m = new Mantenimiento(this.listaUsuarios);
+    m.setVisible(true);
+    
+    // Cerramos el formulario actual de Gestión
+    this.dispose();
+    }//GEN-LAST:event_btnMantenimiento2ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+      Login g = new Login();
+g.setVisible(true);
+dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+     Reinicio ventana = new Reinicio(listaUsuarios); 
+    ventana.setVisible(true);
+    
         
+
+dispose();     
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+   
         Login l2 = new Login();
         l2.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    }                                        
+    
+                                    
+                                             
+      
+    //private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+   //}                                        
 
     /**
      * @param args the command line arguments
@@ -148,10 +267,21 @@ public class gestion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnMantenimiento;
+    private javax.swing.JButton btnMantenimiento1;
+    private javax.swing.JButton btnMantenimiento2;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
